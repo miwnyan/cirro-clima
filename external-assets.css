@@ -1,0 +1,11 @@
+.logo>img{display:block;width:33px;height:33px;filter:brightness(0) invert(87%) sepia(84%) saturate(788%) hue-rotate(161deg)}
+.sky-orbit{position:relative;display:grid;place-items:center}
+.sky-orbit>img{display:block;width:210px;height:210px;object-fit:contain;filter:drop-shadow(0 0 28px #ffb45b77);animation:public-orbit-float 5s ease-in-out infinite}
+.locate>img{width:23px;height:23px;flex:0 0 auto;filter:brightness(0) invert(86%) sepia(80%) saturate(689%) hue-rotate(162deg)}
+.weather-art{display:grid;place-items:center}
+.weather-art .weather-asset{display:none;width:min(100%,300px);height:100%;object-fit:contain;filter:drop-shadow(0 28px 22px #02071388);animation:public-weather-float 4.5s ease-in-out infinite}
+.weather-art.clear .asset-clear,.weather-art.cloudy .asset-cloudy,.weather-art.rain .asset-rain,.weather-art.snow .asset-snow,.weather-art.storm .asset-storm{display:block}
+@keyframes public-orbit-float{50%{transform:translateY(-8px) rotate(5deg)}}
+@keyframes public-weather-float{50%{transform:translateY(-10px) rotate(-3deg)}}
+@media(max-width:700px){.weather-art .weather-asset{width:130px}}
+@media(prefers-reduced-motion:reduce){.sky-orbit>img,.weather-art .weather-asset{animation:none}}

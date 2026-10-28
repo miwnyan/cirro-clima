@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#06101d"><title>Cirro — Observatório do tempo</title><link rel="icon" href="assets/icons/brand-weather.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="creative.css"><script src="core.js" defer></script><script src="app.js" defer></script><script src="experience.js" defer></script></head>
+<body>
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+<canvas id="atmosphere-canvas" class="atmosphere-canvas" aria-hidden="true"></canvas>
+<div class="sky-shell" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="page">
+  <header class="header"><a class="logo" href="index.html" aria-label="Cirro, início"><img src="assets/icons/brand-weather.svg" alt="" width="34" height="34" aria-hidden="true">CIRRO</a><span class="issue">Leitura do céu / Brasil</span><button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false">Pausar ambiente</button><span class="issue" id="clock"></span></header>
+  <main id="main">
+    <section class="title-block"><div data-rb="slide-left" data-rb-trigger="mount"><span class="eyebrow">Condições e previsão ao vivo</span><h1 data-rb-split="mount">Leia o céu daqui.</h1><p>Consulte o tempo agora ou deixe o Cirro encontrar sua posição.</p></div><div class="sky-orbit" aria-hidden="true" data-rb="slide-right" data-rb-trigger="mount" data-rb-delay="0.12" data-rb-tilt><img src="assets/3d/sun.png" alt="" width="400" height="400"></div></section>
+    <section class="lookup" aria-label="Consultar localidade" data-rb="slide-up" data-rb-trigger="mount" data-rb-delay="0.2">
+      <form id="city-form"><label for="city">Encontre uma cidade</label><div class="search-line"><input id="city" type="search" required minlength="2" autocomplete="off" placeholder="Ex.: Recife, Pernambuco…"><button id="search-button" type="submit">Consultar</button></div></form>
+      <button id="locate" class="locate" type="button"><img src="assets/icons/locate.svg" alt="" width="22" height="22" aria-hidden="true"><span><b>Usar minha localização</b><small>Detectar pelo dispositivo</small></span></button>
+      <div class="suggestions"><span>Acessos rápidos</span><button class="quick" type="button" data-city="Recife, Pernambuco">Recife</button><button class="quick" type="button" data-city="São Paulo, São Paulo">São Paulo</button><button class="quick" type="button" data-city="Curitiba, Paraná">Curitiba</button></div>
+    </section>
+    <div id="status" role="status" class="status">Obtendo previsão...</div><div id="matches" class="matches" hidden aria-label="Escolha uma localidade"></div>
+    <section id="weather" class="weather" hidden>
+      <div class="current" id="current-card" data-rb="tilt-up">
+        <div class="atmospheric-grid" aria-hidden="true"></div>
+        <div class="location"><span class="eyebrow">Condições neste momento</span><h2 id="place">—</h2><span id="observation-time" class="update">—</span></div>
+        <div class="temp-view">
+          <div class="temperature"><strong id="temp">—</strong><span>°C</span><div class="depth-echo" id="temp-echo" aria-hidden="true">—</div></div>
+          <div class="condition">
+            <div id="condition-visual" class="weather-art clear" aria-hidden="true" data-rb-tilt><img class="weather-asset asset-clear" src="assets/3d/sun.png" alt="" width="400" height="400"><img class="weather-asset asset-cloudy" src="assets/3d/moon.png" alt="" width="400" height="400"><img class="weather-asset asset-rain" src="assets/3d/umbrella.png" alt="" width="400" height="400" loading="lazy"><img class="weather-asset asset-snow" src="assets/3d/snowflake.png" alt="" width="400" height="400" loading="lazy"><img class="weather-asset asset-storm" src="assets/3d/flash.png" alt="" width="400" height="400" loading="lazy"></div>
+            <strong id="condition">—</strong>
+          </div>
+        </div>
+        <div class="details"><div><span>Sensação</span><strong id="apparent">—</strong></div><div><span>Umidade</span><strong id="humidity">—</strong></div><div><span>Vento</span><strong id="wind">—</strong></div><div><span>Precipitação</span><strong id="rain">—</strong></div></div>
+      </div>
+      <div class="forecast" data-rb="slide-up"><div class="forecast-header"><div><span class="eyebrow">Linha do horizonte</span><h2>Próximos seis dias</h2></div><span class="forecast-key">Máxima / mínima / chuva</span></div><div id="forecast-days" class="forecast-grid"></div></div>
+    </section>
+    <footer><span>Cirro / dados por <a target="_blank" rel="noreferrer" href="https://open-meteo.com/">Open-Meteo</a></span><span>Previsões podem mudar com novas leituras.</span><span class="author-credit">Criado por <strong>Jéssica Montes Santos</strong> · <a href="https://github.com/miwnyan" target="_blank" rel="me noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/jessicamontessantos/" target="_blank" rel="me noreferrer">LinkedIn</a></span><small class="asset-credits">Ativos: <a href="https://3dicons.co/" target="_blank" rel="noreferrer">3dicons</a> e <a href="https://lucide.dev/" target="_blank" rel="noreferrer">Lucide</a> via <a href="https://iconify.design/" target="_blank" rel="noreferrer">Iconify</a>.</small></footer>
+  </main>
+</div>
+</body>
+</html>
